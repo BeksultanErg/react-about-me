@@ -1,13 +1,504 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ===== Zeroing ===== */
+*,
+*::before,
+*::after{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   scroll-behavior: smooth;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+   font-family: 'Roboto', sans-serif;
+}
+/* ===== Header nahoditsa na 1 stroke media.css===== */
+.header{
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 50;
+}
+.header::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #EEEFF1;
+   z-index: 2;
+}
+.header__container{
+   max-width: 1135px;
+   padding: 0px 15px;
+   margin: 0 auto;
+}
+.header__inner{
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   height: 60px;
+   align-items: center;
+}
+.logo{
+   overflow: hidden;
+   position: relative;
+   z-index: 3;
+}
+.logo img{
+   max-width: 100%;
+   display: block;
+}
+.header__burger{
+   display: none;
+}
+.header__list{
+   display: flex;
+   position: relative;
+   z-index: 2;
+}
+.header__list li{
+   list-style: none;
+   margin-left: 42px;
+}
+.header__list li:first-child{
+   margin-left: 0px;
+}
+.header__link{
+   color: #000000;
+   text-transform: uppercase;
+   transition: all 0.3s ease;
+}
+.header__link:hover{
+   color: #34547A;
+}
+/* ===== Intro nahoditsa v 80 stroke media.css ===== */
+.intro{
+   width: 100%;
+   padding: 221px 0px 100px;
+   background-color: #EEEFF1;
+}
+.intro__container{
+   max-width: 1058px;
+   padding: 0px 15px;
+   margin: 0 auto;
+}
+.intro__inner{
+   display: flex;
+}
+.intro__about{
+   margin-left: 130px;
+}
+.intro__about-title{
+   font-size: 48px;
+   font-weight: 500;
+   line-height: 78px;
+   color: #000;
+   margin-bottom: 60px;
+}
+.intro__about-subtitle{
+   font-size: 16px;
+   line-height: 26px;
+   font-weight: 400;
+   color: #727272;
+   margin-bottom: 60px;
+}
+.intro__about-btn{
+   display: inline-block;
+   color: #fff;
+   background: #34547A;
+   padding: 25px 42px;
+}
+/* ===== About me ===== */
+.about-me{
+   width: 100%;
+   padding: 110px 0px 100px;
+   background-color: #fff;
+}
+.about-me__container{
+   max-width: 570px;
+   padding: 0px 15px;
+   margin: 0 auto;
+}
+.title{
+   font-size: 32px;
+   line-height: 37px;
+   color: #000;
+   text-align: center;
+   margin-bottom: 50px;
+}
+.subtitle{
+   font-size: 16px;
+   line-height: 26px;
+   color: #727272;
+   text-align: center;
+}
+/* ===== About projects ===== */
+.about-projects{
+   width: 100%;
+   padding: 100px 0px;
+   background-color: #34547A;
+}
+.about-projects__container{
+   max-width: 1121px;
+   padding: 0px 15px;
+   margin: 0 auto;
+}
+.about-projects__inner{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.about-projects__inner__block{
+   display: flex;
+}
+.about-projects__inner__block div{
+   margin-left: 20px;
+}
+.block__project-client{
+   font-size: 21px;
+   font-weight: 500;
+   line-height: 25px;
+   color: #fff;
+}
+.block__project-client__text{
+   font-size: 16px;
+   line-height: 26px;
+   color: #fff;
+}
+/* ===== My skills ===== */
+.my-skills{
+   width: 100%;
+   padding: 101px 0px;
+   background-color: #fff;
+}
+.my-skills__container{
+   max-width: 1180px;
+   padding: 0px 15px;
+   margin: 0 auto;
+}
+.my-skills__inner{
+   display: flex;
+   justify-content: space-between;
+}
+.my-skills__block{
+   width: 40%;
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+}
+.my-skills__block__title{
+   font-size: 32px;
+   line-height: 37px;
+   font-weight: 500;
+   margin-bottom: 50px;
+}
+.my-skills__block__tech{
+   margin-bottom: 29px;
+}
+.tech__name{
+   font-size: 16px;
+   line-height: 26px;
+   color: #727272;
+   margin-bottom: 20px;
+}
+.tech__procent{
+   width: 100%;
+   height: 4px;
+   background: #C4C4C4;
+   position: relative;
+}
+.tech__procent::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 80%;
+   height: 4px;
+   background: #34547A;
+}
+/* ===== How i Work ===== */
+.how-i-work{
+   width: 100%;
+   background: #EEEFF1;
+   padding: 100px 0px;
+}
+.how-i-work__container{
+   max-width: 1140px;
+   padding: 0px 15px;
+   margin: 0 auto;
+}
+.how-i-work__inner {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.how-i-worktext{
+   width: 60%;
+   margin-bottom: 57px;
+}
+iframe{
+   width: 100%;
+   height: calc(.5625 * 80vw);
+}
+/* ===== Footer ===== */
+.footer{
+   width: 100%;
+   padding: 50px 0px;
+   background-color: #34547A;
+}
+.footer__container{
+   max-width: 1125px;
+   margin: 0 auto;
+}
+.footer__inner{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.footer__name{
+   font-size: 21px;
+   line-height: 25px;
+   font-weight: 500;
+   color: #fff;
+   margin-bottom: 20px;
+}
+.footer__number{
+   font-size: 18px;
+   line-height: 20px;
+   font-weight: 400;
+   color: #fff;
+}
+.social a{
+   margin-left: 10px;
+}
+/* ===== Responcive for 1059px ===== */
+@media (max-width: 1059px) {
+  /* ===== Intro =====*/
+  .intro{
+     padding: 190px 0px 90px;
+  }
+  .intro__about-title{
+     font-size: 42px;
+     line-height: 72px;
+     margin-bottom: 54px;
+  }
+  .intro__about-subtitle{
+     margin-bottom: 54px;
+  }
+  /* ===== About me ===== */
+  .about-me{
+     padding: 96px 0px 90px;
+  }
+  /* ===== My skills ===== */
+  .my-skills__inner {
+     display: flex;
+     flex-direction: column;
+     flex-flow: column wrap;
+     align-items: center;
+ }
+ .my-skills__img{
+  order: 1;
+ }
+ .my-skills__block{
+    margin-top: 40px;
+    order: 2;
+    width: 100%;
+ }
+}
+/* ===== Responcive for 929px ===== */
+@media (max-width: 929px) {
+  /* ===== Intro =====*/
+  .intro{
+     padding: 160px 0px 80px;
+  }
+  .intro__about-title{
+     margin-bottom: 48px;
+  }
+  .intro__about-subtitle{
+     margin-bottom: 48px;
+  }
+  /* ===== About me ===== */
+  .about-me{
+     padding: 90px 0px 90px;
+  }
+  /* ===== How i work ===== */
+  .how-i-worktext {
+     width: 100%;
+ }
+}
+/* ===== Responcive for 869px ===== */
+@media (max-width: 869px) {
+  /* ===== Intro =====*/
+  .intro{
+     padding: 140px 0px 80px;
+  }
+  .intro__about-title{
+     font-size: 36px;
+     line-height: 66px;
+     margin-bottom: 40px;
+  }
+  .intro__about-subtitle{
+     margin-bottom: 40px;
+  }
+  .intro__about-btn{
+     padding: 22px 39px;
+  }
+  /* ===== About me ===== */
+  .about-me{
+     padding: 84x 0px 84px;
+  }
+}
+/* ===== Responcive for 818px ===== */
+@media (max-width: 818px) {
+  /* ===== Intro =====*/
+  .intro{
+     padding: 140px 0px 80px;
+  }
+  .intro__about-title{
+     font-size: 30px;
+     line-height: 60px;
+     margin-bottom: 34px;
+  }
+  .intro__about-subtitle{
+     margin-bottom: 34px;
+  }
+  /* ===== About me ===== */
+  .about-me{
+     padding: 78px 0px 78px;
+  }
+}
+/* ===== Responcive for 767px ===== */
+@media (max-width: 767px) {
+  body.lock{
+     overflow: hidden;
+  }
+  /* ===== Header ===== */
+  .header__inner{
+     height: 50px;
+  }
+  .logo{
+     flex: 0 0 70px;
+  }
+  .header__burger{
+     display: block;
+     position: relative;
+     width: 30px;
+     height: 20px;
+     z-index: 3;
+  }
+  .header__burger span{
+     position: absolute;
+     background-color: #34547A;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     top: 9px;
+     transition: all 0.4s;
+  }
+  .header__burger::before,
+  .header__burger::after{
+     content: '';
+     background-color: #34547A;
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     left: 0;
+     transition: all 0.4s;
+  }
+  .header__burger::before{
+     top: 0;
+  }
+  .header__burger::after{
+     bottom: 0; 
+  }
+  .header__burger.active span{
+     transform: scale(0);
+  }
+  .header__burger.active::before{
+     transform: rotate(45deg);
+     top: 9px;
+  }
+  .header__burger.active::after{
+     transform: rotate(-45deg);
+     bottom: 9px;
+  }
+  .header__menu{
+     position: fixed;
+     top: -100%;
+     left: 0;
+     width: 100%; 
+     height: 100%;
+     background-color: #fff;
+     padding: 70px 10px 20px 10px;
+     transition: all 0.4s;
+     overflow: auto;
+  }
+  .header__menu.active{
+     top: 0;
+     transition: all 0.4s;
+  }
+  .header__list{
+     display: block;
+  }
+  .header__list li{
+     margin: 0px 0px 20px 0px;
+  }
+  .header__link{
+     font-size: 24px;
+  }
+  /* ===== Intro =====*/
+  .intro{
+     padding: 110px 0px 50px;
+  }
+  .intro__inner{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+  .image__intro{
+     margin-bottom: 30px;
+  }
+  .intro__image img{
+     width: 100%;
+  }
+  .intro__about{
+     margin-left: 0px;
+  }
+  /* ===== About me ===== */
+  .about-me{
+     padding: 72px 0px 72px;
+  }
+}
+/* ===== Responcive for 724px ===== */
+@media (max-width: 724px) {
+  /* ===== About Projects ===== */
+  .about-projects{
+     padding: 50px 0px;
+  }
+  .about-projects__inner{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+  .about-projects__inner__block{
+     margin-bottom: 40px;
+  }
+  /* ===== My skills ===== */
+  .my-skills__img img{
+     width: 100%;
+  }
+}
+/* ===== Responcive for 400px ===== */
+@media (max-width: 400px) {
+  .footer__name__block{
+     text-align: center;
+     margin-bottom: 10px;
+  }
+  .footer__inner{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
 }
